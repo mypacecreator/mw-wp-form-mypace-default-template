@@ -13,9 +13,9 @@ class Mypace_MW_WP_Form_Config{
 ------------------------------------------------ */
 
 	public function __construct() {
-		add_filter( 'mwform_default_title',    array( $this, 'my_default_title' ), 10 );
-		add_filter( 'mwform_default_content',  array( $this, 'my_default_content' ), 10 );
-		add_filter( 'mwform_default_settings', array( $this, 'my_default_settings' ), 10 );
+		add_filter( 'mwform_default_title',    array( $this, 'my_default_title' ), 10, 3 );
+		add_filter( 'mwform_default_content',  array( $this, 'my_default_content' ), 10, 3 );
+		add_filter( 'mwform_default_settings', array( $this, 'my_default_settings' ), 10, 3 );
 	}
 
 /* ------------------------------------------------ 
@@ -82,7 +82,7 @@ class Mypace_MW_WP_Form_Config{
 				';
 				break;
 
-				/* ---- URL設定 ---- */
+			/* ---- URL設定 ---- */
 			case 'input_url':
 				$option = '/contact'; //入力画面URL
 				break;
